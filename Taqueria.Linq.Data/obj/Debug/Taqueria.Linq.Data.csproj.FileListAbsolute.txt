@@ -1,0 +1,7 @@
+C:\Users\SONY\source\repos\TaqueriaTadeos\Taqueria.Linq.Data\bin\Debug\Taqueria.Linq.Data.dll.config
+C:\Users\SONY\source\repos\TaqueriaTadeos\Taqueria.Linq.Data\bin\Debug\Taqueria.Linq.Data.dll
+C:\Users\SONY\source\repos\TaqueriaTadeos\Taqueria.Linq.Data\bin\Debug\Taqueria.Linq.Data.pdb
+C:\Users\SONY\source\repos\TaqueriaTadeos\Taqueria.Linq.Data\obj\Debug\Taqueria.Linq.Data.csproj.AssemblyReference.cache
+C:\Users\SONY\source\repos\TaqueriaTadeos\Taqueria.Linq.Data\obj\Debug\Taqueria.Linq.Data.csproj.CoreCompileInputs.cache
+C:\Users\SONY\source\repos\TaqueriaTadeos\Taqueria.Linq.Data\obj\Debug\Taqueria.Linq.Data.dll
+C:\Users\SONY\source\repos\TaqueriaTadeos\Taqueria.Linq.Data\obj\Debug\Taqueria.Linq.Data.pdb

@@ -1,0 +1,6 @@
+C:\Users\SONY\source\repos\TaqueriaTadeos\TaqueriaPTadeosControl\bin\Release\TaqueriaPTadeosControl.dll
+C:\Users\SONY\source\repos\TaqueriaTadeos\TaqueriaPTadeosControl\bin\Release\TaqueriaPTadeosControl.pdb
+C:\Users\SONY\source\repos\TaqueriaTadeos\TaqueriaPTadeosControl\obj\Release\TaqueriaPTadeosControl.csproj.AssemblyReference.cache
+C:\Users\SONY\source\repos\TaqueriaTadeos\TaqueriaPTadeosControl\obj\Release\TaqueriaPTadeosControl.csproj.CoreCompileInputs.cache
+C:\Users\SONY\source\repos\TaqueriaTadeos\TaqueriaPTadeosControl\obj\Release\TaqueriaPTadeosControl.dll
+C:\Users\SONY\source\repos\TaqueriaTadeos\TaqueriaPTadeosControl\obj\Release\TaqueriaPTadeosControl.pdb
