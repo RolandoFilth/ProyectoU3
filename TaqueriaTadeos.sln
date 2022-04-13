@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaqueriaTadeos", "TaqueriaTadeos\TaqueriaTadeos.csproj", "{2C8527B3-A802-4DD5-AE6B-2B569D1105E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taqueria.Linq.Data", "Taqueria.Linq.Data\Taqueria.Linq.Data.csproj", "{6E5DF051-C364-42FC-82C2-6973EACE2149}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaqueriaPTadeosControl", "TaqueriaPTadeosControl\TaqueriaPTadeosControl.csproj", "{D7856FE6-0548-4EE0-8535-BABF83346E4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C8527B3-A802-4DD5-AE6B-2B569D1105E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C8527B3-A802-4DD5-AE6B-2B569D1105E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C8527B3-A802-4DD5-AE6B-2B569D1105E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C8527B3-A802-4DD5-AE6B-2B569D1105E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E5DF051-C364-42FC-82C2-6973EACE2149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E5DF051-C364-42FC-82C2-6973EACE2149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E5DF051-C364-42FC-82C2-6973EACE2149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E5DF051-C364-42FC-82C2-6973EACE2149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7856FE6-0548-4EE0-8535-BABF83346E4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7856FE6-0548-4EE0-8535-BABF83346E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7856FE6-0548-4EE0-8535-BABF83346E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7856FE6-0548-4EE0-8535-BABF83346E4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7EFFCF4F-2F11-4D9E-8CB7-54B738895252}
+	EndGlobalSection
+EndGlobal

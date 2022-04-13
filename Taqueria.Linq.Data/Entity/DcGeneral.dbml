@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Taqueria_Tadeos" Class="DcGeneralDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-F5M8TGN;Initial Catalog=Taqueria_Tadeos;User ID=sa" SettingsObjectName="Taqueria.Linq.Data.Properties.Settings" SettingsPropertyName="Taqueria_TadeosConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Empleado" Member="Empleado">
+    <Type Name="Empleado">
+      <Column Name="IdEmpleado" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="APaterno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AMaterno" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CURP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdSucursal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sexo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Puesto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Empleado_Usuario" Member="Usuario" ThisKey="IdEmpleado" OtherKey="IdEmpleado" Type="Usuario" />
+      <Association Name="Empleado_Venta" Member="Venta" ThisKey="IdEmpleado" OtherKey="IdEmpleado" Type="Venta" />
+      <Association Name="Puesto_Empleado" Member="Puesto1" ThisKey="Puesto" OtherKey="IdPuesto" Type="Puesto" IsForeignKey="true" />
+      <Association Name="Sexo_Empleado" Member="Sexo1" ThisKey="Sexo" OtherKey="IdSexo" Type="Sexo" IsForeignKey="true" />
+      <Association Name="Sucursal_Empleado" Member="Sucursal" ThisKey="IdSucursal" OtherKey="IdSucursal" Type="Sucursal" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Producto" Member="Producto">
+    <Type Name="Producto">
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TProductoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TAlimentoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TCarneID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NombreProducto" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Association Name="Producto_ProductoSucursal" Member="ProductoSucursal" ThisKey="IdProducto" OtherKey="IdProducto" Type="ProductoSucursal" />
+      <Association Name="Producto_ProductosVenta" Member="ProductosVenta" ThisKey="IdProducto" OtherKey="idProducto" Type="ProductosVenta" />
+      <Association Name="TipoAlimento_Producto" Member="TipoAlimento" ThisKey="TAlimentoId" OtherKey="IdTAlimento" Type="TipoAlimento" IsForeignKey="true" />
+      <Association Name="TipoCarne_Producto" Member="TipoCarne" ThisKey="TCarneID" OtherKey="IdTCarne" Type="TipoCarne" IsForeignKey="true" />
+      <Association Name="TipoProducto_Producto" Member="TipoProducto" ThisKey="TProductoId" OtherKey="IdTProducyo" Type="TipoProducto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductoSucursal" Member="ProductoSucursal">
+    <Type Name="ProductoSucursal">
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdSucursal" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Stock" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Producto_ProductoSucursal" Member="Producto" ThisKey="IdProducto" OtherKey="IdProducto" Type="Producto" IsForeignKey="true" />
+      <Association Name="Sucursal_ProductoSucursal" Member="Sucursal" ThisKey="IdSucursal" OtherKey="IdSucursal" Type="Sucursal" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductosVenta" Member="ProductosVenta">
+    <Type Name="ProductosVenta">
+      <Column Name="idProducto" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="idVenta" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PrecioVenta" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Producto_ProductosVenta" Member="Producto" ThisKey="idProducto" OtherKey="IdProducto" Type="Producto" IsForeignKey="true" />
+      <Association Name="Venta_ProductosVenta" Member="Venta" ThisKey="idVenta" OtherKey="IdVenta" Type="Venta" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Puesto" Member="Puesto">
+    <Type Name="Puesto">
+      <Column Name="IdPuesto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Puesto_Empleado" Member="Empleado" ThisKey="IdPuesto" OtherKey="Puesto" Type="Empleado" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sexo" Member="Sexo">
+    <Type Name="Sexo">
+      <Column Name="IdSexo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Sexo_Empleado" Member="Empleado" ThisKey="IdSexo" OtherKey="Sexo" Type="Empleado" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sucursal" Member="Sucursal">
+    <Type Name="Sucursal">
+      <Column Name="IdSucursal" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Sucursal_Empleado" Member="Empleado" ThisKey="IdSucursal" OtherKey="IdSucursal" Type="Empleado" />
+      <Association Name="Sucursal_ProductoSucursal" Member="ProductoSucursal" ThisKey="IdSucursal" OtherKey="IdSucursal" Type="ProductoSucursal" />
+      <Association Name="Sucursal_Venta" Member="Venta" ThisKey="IdSucursal" OtherKey="IdSucursal" Type="Venta" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipoAlimento" Member="TipoAlimento">
+    <Type Name="TipoAlimento">
+      <Column Name="IdTAlimento" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="TipoAlimento_Producto" Member="Producto" ThisKey="IdTAlimento" OtherKey="TAlimentoId" Type="Producto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipoCarne" Member="TipoCarne">
+    <Type Name="TipoCarne">
+      <Column Name="IdTCarne" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="TipoCarne_Producto" Member="Producto" ThisKey="IdTCarne" OtherKey="TCarneID" Type="Producto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipoProducto" Member="TipoProducto">
+    <Type Name="TipoProducto">
+      <Column Name="IdTProducyo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="TipoProducto_Producto" Member="Producto" ThisKey="IdTProducyo" OtherKey="TProductoId" Type="Producto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TipoUsuario" Member="TipoUsuario">
+    <Type Name="TipoUsuario">
+      <Column Name="IdTipoUsuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="TipoUsuario_Usuario" Member="Usuario" ThisKey="IdTipoUsuario" OtherKey="TipoUsuario" Type="Usuario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuario" Member="Usuario">
+    <Type Name="Usuario">
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Usuario" Member="Usuario1" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="Contrasenia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdEmpleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Empleado_Usuario" Member="Empleado" ThisKey="IdEmpleado" OtherKey="IdEmpleado" Type="Empleado" IsForeignKey="true" />
+      <Association Name="TipoUsuario_Usuario" Member="TipoUsuario1" ThisKey="TipoUsuario" OtherKey="IdTipoUsuario" Type="TipoUsuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Venta" Member="Venta">
+    <Type Name="Venta">
+      <Column Name="IdVenta" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FechayHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IdEmpleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdSucursal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CobroTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="Venta_ProductosVenta" Member="ProductosVenta" ThisKey="IdVenta" OtherKey="idVenta" Type="ProductosVenta" />
+      <Association Name="Empleado_Venta" Member="Empleado" ThisKey="IdEmpleado" OtherKey="IdEmpleado" Type="Empleado" IsForeignKey="true" />
+      <Association Name="Sucursal_Venta" Member="Sucursal" ThisKey="IdSucursal" OtherKey="IdSucursal" Type="Sucursal" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

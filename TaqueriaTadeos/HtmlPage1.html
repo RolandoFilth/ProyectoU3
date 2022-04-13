@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#btnCargarEmpleados').click(function () {
+                $('#errorModal').modal('show');
+
+            });
+        });
+    </script>
+    <title>
+
+    </title>
+</head>
+
+<body>
+
+
+    <button class="btn btn-primary" id="btnCargarEmpleados">Cargar Eempleados</button>
+
+
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+
+                </div>
+                <div class="modal-body">
+                    Su cuenta a expirado, logese de nuevo
+                    <div id="divError">
+                        <label id="divErrorText"></label>
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <a href="login.html" type="button" class="btn btn-primary"> Login</a>
+                </div>
+            </div>
+
+        </div>
+        <div id="divData">
+        </div>
+    </div>
+</body>
+</html>
